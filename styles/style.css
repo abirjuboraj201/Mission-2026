@@ -71,6 +71,131 @@
   color: #434343;
 }
 
+.my-mission
+{
+  padding: 30px 150px 50px 150px;
+  margin-bottom: 50px;
+}
+
+.my-mission > h3
+{
+  font-weight: bold;
+  font-size: 48px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.my-mission > h3 > span 
+{
+  color: #ffad5a;
+}
+
+.missions
+{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 24px;
+}
+
+.mission
+{
+  background-color: rgba(79, 157, 166, 0.1);
+}
+.vision
+{
+  background-color: rgba(255, 89, 89, 0.1);
+}
+.goal 
+{
+  background-color: rgba(255, 244, 214, 1);
+}
+
+.mission, .vision, .goal 
+{
+  padding: 25px 32px 45px;
+  border-radius: 26px;
+}
+.mission-title
+{
+  font-weight: 700;
+  font-size: 24px;
+}
+.mission-icon
+{
+  width: 150px;
+  margin-bottom: 20px;
+  display: flex;
+  align-self: flex-start;
+}
+.mission-icon img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.develop 
+{
+  /* background-image: url("/images/shapes/shape-1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top left; */
+  margin-left: 32px ;
+}
+
+
+.develop-container 
+{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  align-items: center;
+  gap: 50px;
+  padding: 85px 80px;
+}
+
+.coding-img{
+  max-width: 500px;
+  background-image: url("/images/shapes/shape-1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top left;
+  padding-left: 50px;
+}
+.coding-img img 
+{
+  
+  max-width: 100% ;
+  height: auto;
+  display: block;
+}
+
+.develop-heading 
+{
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 18px;
+  line-height: auto;
+}
+
+.develop-description
+{
+  font-size: 18px;
+  color: #3E3E3E;
+  margin-bottom: 18px;
+  line-height: 30px;
+}
+
+.btn 
+{
+  padding: 14px 30px;
+  background-color: #ff5959;
+  border: none;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+
+
+
 /* responsive styles */
 
 /* small device */
@@ -97,5 +222,15 @@
   }
   .banner-scroll {
     text-align: center;
+  }
+  .my-mission 
+  {
+    padding: 20px;
+  }
+
+  .missions 
+  {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
