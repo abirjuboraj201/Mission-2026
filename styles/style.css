@@ -71,130 +71,144 @@
   color: #434343;
 }
 
-.my-mission
-{
+.my-mission {
   padding: 30px 150px 50px 150px;
   margin-bottom: 50px;
+  position: relative;
 }
 
-.my-mission > h3
+.my-mission::before 
 {
+  content:"";
+  position: absolute;
+  background-image: url("/images/shapes/shape-10.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 200px;
+  bottom: -80px;
+  right: -170px;
+  z-index: 1;
+}
+
+.my-mission > h3 {
   font-weight: bold;
   font-size: 48px;
   margin-bottom: 40px;
   text-align: center;
 }
 
-.my-mission > h3 > span 
-{
+.my-mission > h3 > span {
   color: #ffad5a;
 }
 
-.missions
-{
+.missions {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-.mission
-{
+.mission {
   background-color: rgba(79, 157, 166, 0.1);
 }
-.vision
-{
+.vision {
   background-color: rgba(255, 89, 89, 0.1);
 }
-.goal 
-{
+.goal {
   background-color: rgba(255, 244, 214, 1);
 }
 
-.mission, .vision, .goal 
-{
+.mission,
+.vision,
+.goal {
   padding: 25px 32px 45px;
   border-radius: 26px;
 }
-.mission-title
-{
+.mission-title {
   font-weight: 700;
   font-size: 24px;
 }
-.mission-icon
-{
+.mission-icon {
   width: 150px;
   margin-bottom: 20px;
   display: flex;
   align-self: flex-start;
 }
-.mission-icon img{
+.mission-icon img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-.develop 
+.develop
 {
-  /* background-image: url("/images/shapes/shape-1.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: top left; */
-  margin-left: 32px ;
+  margin-bottom: 100px ;
 }
-
-
-.develop-container 
-{
+.develop-container {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  gap: 50px;
-  padding: 85px 80px;
+  gap: 20px;
+  padding: 85px 150px 85px 150px;
+  position: relative;
 }
 
-.coding-img{
-  max-width: 500px;
-  background-image: url("/images/shapes/shape-1.png");
-  background-repeat: no-repeat;
+.develop-container::after{
+  content: "";
+  position: absolute;
+  background-image: url("/images/shapes/shape-10.png");
   background-size: contain;
-  background-position: top left;
-  padding-left: 50px;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 200px;
+  bottom: -40px;
+  left: -180px;
 }
-.coding-img img 
-{
-  
-  max-width: 100% ;
+.coding-img {
+  max-width: 500px;
+  height: auto;
+  position: relative;
+}
+.coding-img img {
+  max-width: 100%;
   height: auto;
   display: block;
+  position: relative;
+  z-index: 2;
 }
 
-.develop-heading 
-{
+.coding-img::before {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  content: "";
+  background-image: url("/images/shapes/shape-1.png");
+  background-size: contain;
+  top: 80px;
+  left: -80px;
+  z-index: 1;
+}
+.develop-heading {
   font-weight: bold;
   font-size: 36px;
   margin-bottom: 18px;
   line-height: auto;
 }
 
-.develop-description
-{
+.develop-description {
   font-size: 18px;
-  color: #3E3E3E;
+  color: #3e3e3e;
   margin-bottom: 18px;
   line-height: 30px;
 }
 
-.btn 
-{
+.btn {
   padding: 14px 30px;
   background-color: #ff5959;
   border: none;
   color: #ffffff;
   border-radius: 5px;
 }
-
-
-
 
 /* responsive styles */
 
@@ -206,6 +220,9 @@
     padding: 20px;
     gap: 20px;
   }
+  .banner-content {
+    text-align: center;
+  }
   .banner-title {
     font-size: 36px;
     line-height: 60px;
@@ -213,24 +230,41 @@
 
   .banner-description {
     font-size: 16px;
+    text-align: justify;
   }
   .banner-image {
     order: -1;
   }
-  .banner-btn-container {
-    text-align: center;
-  }
-  .banner-scroll {
-    text-align: center;
-  }
-  .my-mission 
-  {
+
+  .my-mission {
     padding: 20px;
   }
 
-  .missions 
+  .my-mission::before 
   {
+    display: none;
+  }
+
+  .missions {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .develop-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    margin-bottom: 50px;
+  }
+
+  .develop-description {
+    text-align: justify;
+  }
+
+  .develop-container::after 
+  {
+    display: none;
+  }
+  .coding-img::before {
+    display: none;
   }
 }
