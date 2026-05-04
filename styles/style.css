@@ -75,11 +75,11 @@
   padding: 30px 150px 50px 150px;
   margin-bottom: 50px;
   position: relative;
+  overflow: hidden;
 }
 
-.my-mission::before 
-{
-  content:"";
+.my-mission::after {
+  content: "";
   position: absolute;
   background-image: url("/images/shapes/shape-10.png");
   background-size: contain;
@@ -106,6 +106,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  position: relative;
+  z-index: 2;
 }
 
 .mission {
@@ -140,20 +142,22 @@
   display: block;
 }
 
-.develop
+.develop, .community 
 {
-  margin-bottom: 100px ;
+  margin-bottom: 50px;
 }
-.develop-container {
+
+.develop-container,
+.community-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 20px;
-  padding: 85px 150px 85px 150px;
+  padding: 50px 150px 50px 150px;
   position: relative;
 }
 
-.develop-container::after{
+.develop-container::after {
   content: "";
   position: absolute;
   background-image: url("/images/shapes/shape-10.png");
@@ -161,15 +165,18 @@
   background-repeat: no-repeat;
   width: 300px;
   height: 200px;
-  bottom: -40px;
+  bottom: -80px;
   left: -180px;
 }
-.coding-img {
+.coding-img,
+.project-img {
   max-width: 500px;
   height: auto;
   position: relative;
 }
-.coding-img img {
+
+.coding-img img,
+.project-img img {
   max-width: 100%;
   height: auto;
   display: block;
@@ -188,14 +195,16 @@
   left: -80px;
   z-index: 1;
 }
-.develop-heading {
+.develop-heading,
+.community-heading {
   font-weight: bold;
   font-size: 36px;
   margin-bottom: 18px;
   line-height: auto;
 }
 
-.develop-description {
+.develop-description,
+.community-description {
   font-size: 18px;
   color: #3e3e3e;
   margin-bottom: 18px;
@@ -208,6 +217,24 @@
   border: none;
   color: #ffffff;
   border-radius: 5px;
+}
+
+.project-img {
+  display: block;
+  margin-left: auto;
+}
+
+.project-img::before {
+  content: "";
+  position: absolute;
+  background-image: url("/images/shapes/shape-1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+  bottom: -80px;
+  right: -80px;
+  z-index: 1;
 }
 
 /* responsive styles */
@@ -240,8 +267,10 @@
     padding: 20px;
   }
 
-  .my-mission::before 
-  {
+  .my-mission::before,
+  .develop-container::after,
+  .coding-img::before,
+  .project-img::before {
     display: none;
   }
 
@@ -250,21 +279,15 @@
     gap: 20px;
   }
 
-  .develop-container {
+  .develop-container, 
+  .community-container {
     grid-template-columns: 1fr;
     padding: 20px;
     margin-bottom: 50px;
   }
 
-  .develop-description {
+  .develop-description,
+  .community-description {
     text-align: justify;
-  }
-
-  .develop-container::after 
-  {
-    display: none;
-  }
-  .coding-img::before {
-    display: none;
   }
 }
